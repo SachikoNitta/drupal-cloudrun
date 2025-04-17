@@ -1,0 +1,61 @@
+# Drupal core files managed by Composer
+web/core/
+web/modules/contrib/
+web/themes/contrib/
+
+# Vendor directory
+/vendor/
+
+# Composer lock file should be included if you're using Composer in team
+# But if you're generating per-env, you can uncomment this
+/composer.lock
+
+# Drupal config sync (exclude if you're not using config split)
+# /config/
+
+# Private files
+/private/
+
+# Site-specific files (settings, file uploads)
+sites/*/files/
+sites/*/private/
+sites/*/settings*.php
+sites/*/services.yml
+
+# Allow default.settings.php and default.services.yml
+!sites/example.settings.php
+!sites/example.sites.php
+!sites/example.services.yml
+
+# Temporary files
+/tmp/
+*.log
+*.sql
+*.sqlite
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE-specific
+.vscode/
+.idea/
+
+# Node-related (if using frontend tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# DDEV
+.ddev/.importdb
+.ddev/.webimage-extra-packages
+.ddev/.downloads/
+.ddev/.gitignore
+.ddev/nginx-site.conf
+.ddev/commands/
+.ddev/docker-compose.*
+
+# Misc
+.env
+.env.*
