@@ -36,4 +36,7 @@ RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/web|' /etc/a
 # AllowOverrideを許可する設定
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
+# Cloud SQL Auth Proxyのインストール
+RUN mkdir -p /cloudsql
+
 CMD ["apache2-foreground"]
