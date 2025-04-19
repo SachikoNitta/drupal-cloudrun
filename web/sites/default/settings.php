@@ -90,7 +90,6 @@
  * ];
  * @endcode
  */
-$databases = [];
 
 /**
  * Customizing database settings.
@@ -897,3 +896,13 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+if (getenv('IS_GCP')) {
+  $databases['default']['default'] = [
+    'driver'      => 'mysql',
+    'database'    => getenv('DB_NAME'),
+    'username'    => getenv('DB_USER'),
+    'password'    => getenv('DB_PASS'),
+    'unix_socket' => '/cloudsql/' . getenv('DB_CONNECTION_NAME'),
+  ];
+}
